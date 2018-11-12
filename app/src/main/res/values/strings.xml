@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">testrun</string>
+    <string name="btnM">สินค้าตลาด</string>
+    <string name="btnP">สินค้าสั่งล่วงหน้า</string>
+    <string name="btnN">สินค้าที่ต้องการ</string>
+    <string name="edit_title">Title</string>
+    <string name="edit_content">content</string>
+    <string name="btnSend">send</string>
+</resources>
