@@ -90,16 +90,9 @@ public class CustomAdapter extends BaseAdapter {
             } else {
                 Uri uri;
                 LayoutInflater mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                view = mInflater.inflate(R.layout.picleft, parent, false);
+                view = mInflater.inflate(R.layout.picright, parent, false);
                 final ImageView imageView = (ImageView)view.findViewById(R.id.imgView);
-                FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
-                StorageReference storageReference = firebaseStorage.getReference();
-                storageReference.child("Image").child("all/" + Mes.get(position)).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        imageView.setImageURI(uri);
-                    }
-                });
+                new DownloadImageTask(imageView).execute(Mes.get(position));
                 return view;
             }
         }
