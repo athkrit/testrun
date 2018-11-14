@@ -181,9 +181,9 @@ public class chat extends AppCompatActivity {
 
     public void UploadData(String photoURL) {
         Date currentTime = Calendar.getInstance().getTime();
-        String photo = UserID;
+        String photo = photoURL;
         String time = currentTime.toString();
-        Friendly friendly = new Friendly("buyer", photoURL, time,"Pic");
+        Friendly friendly = new Friendly("buyer", photo, time,"Pic");
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         String ordersend;
